@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>Responsive CV Website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/> 
+    <link rel="stylesheet" type="text/css" href="css/stylesss.css"/>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic|PT+Serif:400,400italic"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easytabs.min.js"></script>   
+<!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+</head>
+<body class="homepage" ">
+   <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i> 9542223544</p></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                            <div class="search">
+                                <form role="form">
+                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.jsp"><img src="images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="login.jsp">Logout</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                       
+                  
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="404.jsp">Premium template</a></li>
+                                <li><a href="404.jsp">Interview Tricks</a></li>
+                                <li><a href="404.jsp">Shortcodes</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="contact-us.html">Contact</a></li>       -->                  
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+
+
+
+    
+        <div id="container">
+            <div id="content" >
+                <div class="menu">
+                	<ul class="tabs">
+                    	<li><a href="#profile" class="profile-tab">Profile</a></li>
+                    	<li><a href="#resume" class="resume-tab">Resume</a></li>
+                    	<li><a href="#portfolio" class="portfolio-tab">Portfolio</a></li>
+                    	<li><a href="#connect" class="connect-tab">Connect</a></li>
+                    </ul>
+                </div>
+
+                <div id="profile"> 
+                	<div class="about">
+                    	<div class="profile-photo"><img src="images/profile-picture.png" width="127" height="154"/></div>
+                        <h1>JOHN DOE</h1>
+                        <h3><i>Web Designer/Video Editor</i></h3>
+                        <p>is a web, graphic and video enthusiast based in Kansas City, Missouri, USA. Have a passion for designing detailed, creative and modern websites & graphics. </p>
+                    </div>
+
+					
+                	<ul class="basic-info">
+					<li><h3>BASIC INFO </h3></li>
+						<li><label>Name</label><span>John Doe</span></li>
+                        <li><label>Birthdate</label><span>December 5, 1990</span></li>
+                        <li><label>Address</label><span>Kansas City, Missouri</span></li>
+                        <li><label>Phone</label><span>+000 000 000 000</span></li>
+						<li><label>Email</label><span><a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="7b1e161a12173b1e161a121755181416">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></span></li>
+                        <li><label>Website</label><span>www.website.com</span></li>
+                    </ul>
+                </div>        
+
+
+                <div id="resume">
+                	 <div class="resume-section">  
+                        <h3 class="main-heading">Educational Background</h3>   
+                         <ul class="date">
+                            <li>            
+                                <div class="date-box">
+                                    <h4>Crest High School<span class="date-range">2003 - 2007</span></h4>
+                                    <h5>Effingham, Kansas City, Missouri</h5>
+                                </div>
+                            </li>
+                              <li>            
+                                <div class="date-box">
+                                    <h4>Emporia State University<span class="date-range">2007 - 2011</span></h4>
+                                    <h5>Emporia, Missouri</h5>
+                                </div>
+                            </li>
+                            <div class="clear"></div>
+                        </ul> 
+   
+						
+						<h3 class="main-heading">Employment History</h3>   
+                         <ul class="date">
+                            <li>            
+                                <div class="date-box">
+                                    <h4>EGG Graphic Design<span class="date-range">2011 - 2012</span></h4>
+                                    <h5>Kansas City, Missouri</h5>
+                                </div>
+                            </li>
+                              <li>            
+                                <div class="date-box">
+                                    <h4>Creative Design Mind<span class="date-range">2012 - 2013</span></h4>
+                                    <h5>New York City, USA</h5>
+                                </div>
+                            </li>
+                        </ul>    
+                    </div>
+					
+					
+                    <div class="skills-section">
+                        <h3 class="main-heading"><span>Technical Skills</span></h3> 
+                        <ul class="skills">
+                            <li> <h4>* Graphic Design</h4></li>
+                            <li> <h4>* Wordpress </h4></li>
+                            <li> <h4>* Creative Writing</h4></li>
+                            <li> <h4>* Flash Dev.</h4> </li>
+						</ul>
+                     </div>
+                </div>
+
+                <div id="portfolio">
+                    <div class="heading">My Latest Projects</div>
+                    <ul id="portfolios">
+                        <li>
+                            <a href="#">
+                                <img src="images/portfolio-image-thumb.png">
+                                <h2 class="portfolio-title">Website 1</h2>
+                                <span class="desc">E-commerce Site</span> 
+                            </a>
+                    	</li>
+                        <li>
+                              <a href="#">
+                                <img src="images/portfolio-image-thumb.png">
+                                <h2 class="portfolio-title">Website 2</h2>
+                                <span class="desc">Dating Site</span> 
+                            </a>
+                    	</li>                        
+                        <li>
+                             <a href="#">
+                                <img src="images/portfolio-image-thumb.png">
+                                <h2 class="portfolio-title">Website 3</h2>
+                                <span class="desc">Social Site</span> 
+                            </a>
+                    	</li>
+                        <li>
+                             <a href="#">
+                                <img src="images/portfolio-image-thumb.png">
+                                <h2 class="portfolio-title">Movie FX</h2>
+                                <span class="desc">Short Film Intro</span> 
+                            </a>
+                    	</li>
+                        
+                    </ul>
+                </div>
+
+				
+                <div id="connect">
+                     <div class="contact-form">
+                        <h3 class="main-heading"><span>Connect With Us</span></h3>
+                        <form action="" id="connectform">
+                            <p>
+                            	<label for="name">Name</label> <input type="text" name="name" class="input" >
+                            </p>
+                            <p>
+                            	<label for="email">Email</label> <input type="text" name="email" class="input">
+                            </p>
+                            <p>
+                            	<label for="message">Message</label> <textarea name="message" cols="50" rows="6" class="textarea" ></textarea>
+                            </p>
+                            <input type="submit" name="submit" value="Send Now" class="submit">
+                        </form>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+<script>
+		jQuery(document).ready(function(){ 
+			var $content 		= $("#content");
+			$content.easytabs({
+			  animate			: true,
+			  transitionIn		:'slideDown',
+			  transitionOut		:'slideUp',
+			  animationSpeed	:500,
+			  tabs				:"> .menu > ul > li",
+			  tabActiveClass	:'active',
+			});
+		});	
+</script>	
+
+    </body>
+     <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">We are hiring</a></li>
+                            <li><a href="#">Meet the team</a></li>
+                            <li><a href="#">Copyright</a></li>
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Faq</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Forum</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Refund policy</a></li>
+                            <li><a href="#">Ticket system</a></li>
+                            <li><a href="#">Billing system</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Developers</h3>
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">SEO Marketing</a></li>
+                            <li><a href="#">Theme</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Email Marketing</a></li>
+                            <li><a href="#">Plugin Development</a></li>
+                            <li><a href="#">Article Writing</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Our Partners</h3>
+                        <ul>
+                            <li><a href="#">Adipisicing Elit</a></li>
+                            <li><a href="#">Eiusmod</a></li>
+                            <li><a href="#">Tempor</a></li>
+                            <li><a href="#">Veniam</a></li>
+                            <li><a href="#">Exercitation</a></li>
+                            <li><a href="#">Ullamco</a></li>
+                            <li><a href="#">Laboris</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+</body>
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">Nacre Services</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Faq</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+    
+	</html>

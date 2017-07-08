@@ -1,0 +1,6 @@
+<form name="login_form">
+	<atts>
+		<att name="username" view_name="User Name" />
+		<att name="password" view_name="User Name" type="password" />
+	</atts>
+</form>

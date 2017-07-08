@@ -1,0 +1,53 @@
+package com.ibaseit.utils;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+
+import org.bouncycastle.bcpg.ArmoredOutputStream;
+import org.bouncycastle.openpgp.PGPCompressedDataGenerator;
+import org.bouncycastle.openpgp.PGPEncryptedDataGenerator;
+import org.bouncycastle.openpgp.PGPException;
+import org.bouncycastle.openpgp.PGPLiteralData;
+import org.bouncycastle.openpgp.PGPLiteralDataGenerator;
+import org.bouncycastle.openpgp.PGPPublicKey;
+import org.bouncycastle.openpgp.operator.bc.BcPGPDataEncryptorBuilder;
+import org.bouncycastle.openpgp.operator.bc.BcPublicKeyKeyEncryptionMethodGenerator;
+
+public class PgpEncAndDec {
+	public static byte[] encryptPGP(byte[] data, PGPPublicKey key, boolean armored, String name, int compressionAlgorithm, int encAlgorithm) throws IOException, NoSuchAlgorithmException {
+		  ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		  
+		  OutputStream out = armored ? new ArmoredOutputStream(baos) : baos;
+
+		  BcPGPDataEncryptorBuilder dataEncryptor = new BcPGPDataEncryptorBuilder(encAlgorithm);
+		  dataEncryptor.setWithIntegrityPacket(true);
+		  dataEncryptor.setSecureRandom(SecureRandom.getInstanceStrong());
+		  
+		  PGPEncryptedDataGenerator encryptedDataGenerator = new PGPEncryptedDataGenerator(dataEncryptor);
+		  encryptedDataGenerator.addMethod(new BcPublicKeyKeyEncryptionMethodGenerator(key));
+
+		  try {
+		    OutputStream encout = encryptedDataGenerator.open(out, 1024);          
+		    
+		    PGPCompressedDataGenerator pgpcdg = new PGPCompressedDataGenerator(compressionAlgorithm);
+		    OutputStream compout = pgpcdg.open(encout);
+		    
+		    PGPLiteralDataGenerator pgpldg = new PGPLiteralDataGenerator(false);
+		    OutputStream ldout = pgpldg.open(compout, PGPLiteralData.BINARY, name, data.length, PGPLiteralData.NOW);
+		    
+		    ldout.write(data);
+		    ldout.close();
+		    compout.close();
+		    encout.close();
+		    out.close();
+		    baos.close();
+		    
+		    return baos.toByteArray();
+		  } catch (PGPException pgpe) {
+		    throw new IOException(pgpe);
+		  }
+		}
+}

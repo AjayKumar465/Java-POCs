@@ -1,0 +1,38 @@
+package com.ibaseit.controller;
+
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.ibaseit.atts.service.LoadAtts;
+
+public class HomeController {
+  
+	LoadAtts loadAtts;
+	
+     
+	
+	public void setLoadAtts(LoadAtts loadAtts) {
+		this.loadAtts = loadAtts;
+	}
+
+
+
+	@RequestMapping(value = "/login.htm", method = RequestMethod.GET)
+	public ModelAndView loginForm(HttpServletRequest request,
+			HttpServletResponse response) {
+		ModelAndView model = new ModelAndView("login");
+		Map<String,Map<String,String>> attsMap = loadAtts.getAtts("atts_login.xml", "atts_loginForm");
+        model.addObject("atts_loginForm", attsMap);
+        request.setAttribute("msg", "kjhjkh");
+        request.getSession().setAttribute("atts_loginForm", attsMap);
+		return model;
+	}
+}

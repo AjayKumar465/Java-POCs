@@ -1,0 +1,7 @@
+<form name="login_form">
+	<atts>
+		<att name="username" />
+		<att name="password" type="password" />
+		<att name="remember" type="checkbox"/>
+	</atts>
+</form>

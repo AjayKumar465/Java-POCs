@@ -1,0 +1,48 @@
+package com.ibaseit.atts.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class LoadAtts extends DefaultHandler {
+	private List attsList = new ArrayList();
+
+	@Override
+	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+		System.out.println(qName);
+	}
+
+	@Override
+	public void endElement(String uri, String localName, String qName) throws SAXException {
+		System.out.println(qName);
+	}
+
+	public List getAtts(String atts_file_name, String form_name) {
+		try {
+
+			SAXParserFactory factory = SAXParserFactory.newInstance();
+			SAXParser saxParser;
+
+			saxParser = factory.newSAXParser();
+			saxParser.parse("src/main/java/com/ibaseit/atts/" + atts_file_name, this);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+
+	}
+
+	public static void main(String[] args) {
+		LoadAtts loadAtts = new LoadAtts();
+		loadAtts.getAtts("atts_login.xml", "logi");
+	}
+}

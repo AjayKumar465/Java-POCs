@@ -1,0 +1,26 @@
+<%@page import="java.util.Set"%>
+<%@page import="com.ibaseit.atts.service.RenderAtts"%>
+<%@page import="java.util.Map"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<html>
+<body>
+<c:set var="atts_loginForm" value="sdgsd"></c:set>
+<h2><c:out value="${atts_loginForm}"/>   </h2>
+
+<%=session.getAttribute("atts_loginForm").toString()%>
+<h1>Login Form</h1><br>
+<% 
+Map<String, Map<String, String>> attsMap  = (Map<String, Map<String, String>>)session.getAttribute("atts_loginForm");
+
+RenderAtts render = new  RenderAtts();
+Map<String,String> atts = attsMap.get("atts_loginForm");
+Set<String> keys =atts.keySet();
+for(String key  : keys){
+
+%>
+
+<table></td></tr>
+<tr><td><%=key %></td><td>:<%=render.renderAttribute(key, atts.get(key)) %></td><td>
+<% }%></table>
+</body>
+</html>

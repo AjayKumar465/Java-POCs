@@ -1,0 +1,15 @@
+package com.ibaseit.atts.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class LoadAtts {
+	private List attsList = new ArrayList();
+	
+	public List getAtts(String atts_file_name, String form_name) {
+        	
+		return null;
+		
+	
+	}
+}

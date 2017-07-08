@@ -1,0 +1,5 @@
+package com.ibaseit.utils;
+
+public class CryptoHelper {
+
+}

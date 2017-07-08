@@ -1,0 +1,36 @@
+package com.ibaseit;
+
+import com.didisoft.pgp.PGPLib;
+
+public class DecryptFile {
+	private boolean isArmored = false;
+	private String id = "95B6679D";
+	private static String passwd = "<Yn#Jtt>vz6[8pD{";
+	private boolean integrityCheck = true;
+
+	private String pubKeyFile = "PGP_Private.pgp";
+	private String privKeyFile = "PGP_Public.pgp";
+
+	private String plainTextFile = "plain-text.txt";
+	private String cipherTextFile = "cypher-text.dat";
+	private String decPlainTextFile = "dec-plain-text.txt";
+
+	public void dec() throws Exception {
+
+		// initialize the library instance
+		PGPLib pgp = new PGPLib();
+
+	
+		// The decrypt method returns the original name of the file
+		// that was encrypted. We can use it afterwards,
+		// to rename OUTPUT.txt to it for example.
+		String originalFileName = pgp.decryptFile(cipherTextFile,privKeyFile , passwd,
+				decPlainTextFile);
+		System.out.println(originalFileName);
+	}
+	
+	public static void main(String[] args) throws Exception {
+		DecryptFile decryptFile = new DecryptFile();
+		decryptFile.dec();
+	}
+}
