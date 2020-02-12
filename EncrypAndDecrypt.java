@@ -17,7 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
 
-public class JsonDataEncrypt {
+public class EncrypAndDecrypt {
 
 	private static PublicKey loadPublicKey(String fileName) {//	ObjectInputStream outputInputStream = getObjectInputStream(fileName);
 		try {
