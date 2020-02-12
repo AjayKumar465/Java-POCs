@@ -19,14 +19,13 @@ import org.apache.commons.codec.binary.Base64;
 
 public class JsonDataEncrypt {
 
-	private static PublicKey loadPublicKey(String fileName) {
-	//	ObjectInputStream outputInputStream = getObjectInputStream(fileName);
+	private static PublicKey loadPublicKey(String fileName) {//	ObjectInputStream outputInputStream = getObjectInputStream(fileName);
 		try {
 			// Get Public Key
-			/*RSAPublicKeySpec rsaPublicKeySpec = new RSAPublicKeySpec((BigInteger) outputInputStream.readObject(),
+			RSAPublicKeySpec rsaPublicKeySpec = new RSAPublicKeySpec((BigInteger) outputInputStream.readObject(),
 					(BigInteger) outputInputStream.readObject());
-			return KeyFactory.getInstance("RSA").generatePublic(rsaPublicKeySpec);*/
-			return 	getPublicKey( fileName);
+			return KeyFactory.getInstance("RSA").generatePublic(rsaPublicKeySpec);
+			//return 	getPublicKey( fileName);
 		} catch (Exception e) {
 			throw new RuntimeException("Unable to load public key.", e);
 		}
@@ -34,14 +33,14 @@ public class JsonDataEncrypt {
 
 	}
 
-	/*private static ObjectInputStream getObjectInputStream(String filePath) {
+	private static ObjectInputStream getObjectInputStream(String filePath) {
 		try {
 			return new ObjectInputStream(new FileInputStream(filePath));
 		} catch (Exception e) {
 			throw new RuntimeException("Unable to open input stream.", e);
 		}
 	}
-*/
+
 	public static PublicKey getPublicKey(String filename) throws Exception {
 
 		byte[] keyBytes = Base64.decodeBase64(Files.readAllBytes(Paths.get(filename)));
@@ -97,13 +96,13 @@ public class JsonDataEncrypt {
 	}
 
 	private static PrivateKey loadPrivateKey(String fileName) {
-		//ObjectInputStream outputInputStream = getObjectInputStream(fileName);
+		ObjectInputStream outputInputStream = getObjectInputStream(fileName);
 		try {
-			/*// Get Private Key
+			// Get Private Key
 			RSAPrivateKeySpec rsaPrivateKeySpec = new RSAPrivateKeySpec((BigInteger) outputInputStream.readObject(),
 					(BigInteger) outputInputStream.readObject());
-			return KeyFactory.getInstance("RSA").generatePrivate(rsaPrivateKeySpec);*/
-			return getPrivateKey(fileName);
+			return KeyFactory.getInstance("RSA").generatePrivate(rsaPrivateKeySpec);
+			//return getPrivateKey(fileName);
 		} catch (Exception e) {
 			throw new RuntimeException("Unable to load private key.", e);
 		}
